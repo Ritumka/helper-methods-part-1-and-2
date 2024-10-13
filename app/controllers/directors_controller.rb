@@ -24,7 +24,7 @@ class DirectorsController < ApplicationController
   end
 
   def create
-    director_attributes = params.require(:director).permit(:title, :dob, :bio)
+    director_attributes = params.require(:director).permit(:name, :dob, :bio)
     @director = Director.new(director_attributes)
 
     if @director.valid?
@@ -40,7 +40,7 @@ class DirectorsController < ApplicationController
   end
 
   def update
-    director_attributes = params.require(:director).permit(:title, :dob, :bio)
+    director_attributes = params.require(:director).permit(:name, :dob, :bio)
     director = Director.find(params.fetch(:id))
 
     if director.valid?
