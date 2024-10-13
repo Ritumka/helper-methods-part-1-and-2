@@ -2,6 +2,15 @@
   List of all movies
 </h1>
 
+<form>
+  <label>Red</label>
+  <input name="zebra[giraffe]" value="red">
+  <label>Red</label>
+  <input name="zebra[elephant]" value="red">
+
+  <button>Submit</button>
+</form>
+
 <hr>
 
 <div>
@@ -37,32 +46,32 @@
   </tr>
 
   <% @movies.each do |movie| %>
-  <tr>
-    <td>
-      <%= movie.id %>
-    </td>
+    <tr>
+      <td>
+        <%= movie.id %>
+      </td>
 
-    <td>
-      <%= movie.title %>
-    </td>
+      <td>
+        <%= movie.title %>
+      </td>
 
-    <td>
-      <%= movie.description %>
-    </td>
+      <td>
+        <%= movie.description %>
+      </td>
 
-    <td>
-      <%= time_ago_in_words(movie.created_at) %> ago
-    </td>
-    <td>
-      <%= time_ago_in_words(movie.updated_at) %> ago
-    </td>
+      <td>
+        <%= time_ago_in_words(movie.created_at) %> ago
+      </td>
+      <td>
+        <%= time_ago_in_words(movie.updated_at) %> ago
+      </td>
 
-    <td>
-    <%= link_to "Show details", movie %>
+      <td>
+        <%= link_to "Show details", movie %>
 
-      <!--<a href="<%#= movie_path(movie) %>">Show details</a>-->
+        <!--<a href="<%#= movie_path(movie) %>">Show details</a>-->
 
-    </td>
-  </tr>
+      </td>
+    </tr>
   <% end %>
 </table>
